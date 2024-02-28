@@ -1,40 +1,43 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package Milliana
- */
+//Template Name: Обьявление
 
-get_header();
+//Template Post Type: post, pages
 ?>
 
-	<main id="primary" class="site-main">
+<?php get_header(); ?>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+<style type="text/css">
+	img, svg {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		user-select: none;
+		pointer-events: none;
+	}
 
-			get_template_part( 'template-parts/content', get_post_type() );
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'milliana' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'milliana' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+</style>
+<script type="text/javascript">
+	document.getElementsByTagName('img').ondragstart = function() { return false; };
+</script>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
-		endwhile; // End of the loop.
-		?>
+<div class="wrap">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-	</main><!-- #main -->
+			<?php
+			// Start the Loop.
+			while ( have_posts() ) :
+				the_post();
+
+				get_template_part( 'page_article');
+			endwhile; // End the loop.
+			?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+</div><!-- .wrap -->
 
 <?php
-get_sidebar();
 get_footer();
+?>

@@ -1,59 +1,109 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Milliana
- */
+        <!DOCTYPE html>
+        <html lang="en">
 
-?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
-	<?php wp_head(); ?>
-</head>
+            <!-- title -->
+            <title>Milliana</title>
 
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'milliana' ); ?></a>
+            <?php wp_head(); ?>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$milliana_description = get_bloginfo( 'description', 'display' );
-			if ( $milliana_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $milliana_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'milliana' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+            <!-- favicon -->
+            <link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.svg">
+            <!-- google font -->
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+            <!-- fontawesome -->
+            <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/all.min.css">
+            <!-- bootstrap -->
+            <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/bootstrap/css/bootstrap.min.css">
+            <!-- owl carousel -->
+            <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.css">
+            <!-- magnific popup -->
+            <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/magnific-popup.css">
+            <!-- animate css -->
+            <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/animate.css">
+            <!-- mean menu css -->
+            <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/meanmenu.min.css">
+            <!-- main style -->
+            <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css">
+            <!-- responsive -->
+            <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/responsive.css">
+            
+
+
+
+        </head>
+
+        <body>
+
+
+        <!--PreLoader-->
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="circle"></div>
+            </div>
+        </div>
+        <!--PreLoader Ends-->
+
+        <!-- header -->
+        <div class="top-header-area" id="sticker">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 text-center">
+                        <div class="main-menu-wrap">
+                            <!-- logo -->
+                            <div class="site-logo">
+                                <a href="#">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="">
+                                </a>
+                            </div>
+                            <!-- logo -->
+
+                            <!-- menu start -->
+                            <nav class="main-menu">
+                                <?php
+                                wp_nav_menu( [
+                                    'theme_location'  => 'menu_main_header',
+                                    'menu'            => 'Menu 1',
+                                    'container'       => 'div',
+                                    'container_class' => 'navbar-collapse sub-menu-bar',
+                                    'container_id'    => 'navbarSupportedContent',
+                                    'menu_class'      => 'navbar-nav me-auto',
+                                    'menu_id'         => 'nav',
+                                ] );
+                                ?>
+                            </nav>
+                            <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                            <div class="mobile-menu"></div>
+                            <!-- menu end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+
+        <!-- search area -->
+        <div class="search-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <span class="close-btn"><i class="fas fa-window-close"></i></span>
+                        <div class="search-bar">
+                            <div class="search-bar-tablecell">
+                                <h3>Search For:</h3>
+                                <input type="text" placeholder="Keywords">
+                                <button type="submit">Search <i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end search area -->

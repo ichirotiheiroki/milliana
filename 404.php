@@ -1,60 +1,70 @@
-<?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package Milliana
- */
+<!DOCTYPE html>
+<html lang="en">
 
-get_header();
-?>
+<head>
 
-	<main id="primary" class="site-main">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'milliana' ); ?></h1>
-			</header><!-- .page-header -->
+	<title>LEVELZ</title>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'milliana' ); ?></p>
+    <link rel="shortcut icon" type="image/x-icon"
+		href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.svg" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/404.css?ver=14">
 
-					<?php
-					get_search_form();
+	<?php wp_head(); ?>
+</head>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+<body>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'milliana' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
 
-					<?php
-					/* translators: %1$s: smiley */
-					$milliana_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'milliana' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$milliana_archive_content" );
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
 
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+	<a target="_blank" href="https://levelz-group.com">
+		<header class="top-header">
+		</header>
 
-	</main><!-- #main -->
+		<!--dust particel-->
+		<div>
+			<div class="starsec"></div>
+			<div class="starthird"></div>
+			<div class="starfourth"></div>
+			<div class="starfifth"></div>
+		</div>
+		<!--Dust particle end--->
 
-<?php
-get_footer();
+
+		<div class="lamp__wrap">
+			<div class="lamp">
+				<div class="cable"></div>
+				<div class="cover"></div>
+				<div class="in-cover">
+					<div class="bulb"></div>
+				</div>
+				<div class="light"></div>
+			</div>
+		</div>
+		<!-- END Lamp -->
+		<section class="error">
+			<!-- Content -->
+			<div class="error__content">
+				<div class="error__message message">
+					<h1 class="message__title">4O4</h1>
+					<p class="message__text">Извини чуввак, но тут тупик.</p>
+				</div>
+				<div class="error__nav e-nav">
+ <a href="https://levelz-group.com">На главную</a>
+				</div>
+			</div>
+			<!-- END Content -->
+
+		</section>
+
+	</a>
+
+
+</body>
+
+</html>
