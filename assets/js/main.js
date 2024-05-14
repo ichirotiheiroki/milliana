@@ -65,7 +65,7 @@
             nav: true,
             navText: ["  ","  "],
             dots: true,
-            loop: false,
+            loop: true,
             responsive: {
                 0:{
                     items:1,

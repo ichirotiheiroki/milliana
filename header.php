@@ -12,7 +12,8 @@
 
             <?php wp_head(); ?>
 
-
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
             <!-- favicon -->
             <link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.svg">
             <!-- google font -->
@@ -44,11 +45,18 @@
 
 
         <!--PreLoader-->
-        <div class="loader">
+<!--         <div class="loader">
             <div class="loader-inner">
                 <div class="circle"></div>
             </div>
+        </div> -->
+			
+			        <div class="loader">
+            <div class="loader-inner">
+                <span class="loaderA"></span>
+            </div>
         </div>
+			
         <!--PreLoader Ends-->
 
         <!-- header -->
@@ -58,11 +66,11 @@
                     <div class="col-lg-12 col-sm-12 text-center">
                         <div class="main-menu-wrap">
                             <!-- logo -->
+                            <a href="<?php echo home_url(); ?>/#">
                             <div class="site-logo">
-                                <a href="#">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="">
-                                </a>
                             </div>
+                        </a>
                             <!-- logo -->
 
                             <!-- menu start -->
